@@ -5,6 +5,17 @@ const iconClose = document.querySelector(".i__close");
 
 const navMenu = document.querySelector(".nav__container");
 
+const aMenu = document.querySelectorAll(".nav__a");
+
+
+
+for (let i = 0; i < aMenu.length; i++) {
+
+    aMenu[i].addEventListener('click', function() {
+      closeMenu();
+    });
+}
+
 
 function openMenu(){
   iconClose.style.transform = "scale(1)";
@@ -25,5 +36,4 @@ iconOpen.addEventListener("click",()=>{
 iconClose.addEventListener("click",()=>{
   closeMenu();
 })
-
 

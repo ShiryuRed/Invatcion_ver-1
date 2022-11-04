@@ -1,9 +1,12 @@
+* {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-size: 22px;
 	font-family: 'Dancing Script', cursive;
 	transition: background .4s, color .4s;
 	background-color: #DFDBE5;
-	
 /*	background-image: url(../multimedia/images/bg-1.jpg);c*/
 	background: var(--background-page);
 }
@@ -78,15 +81,18 @@ body.dark{
 .menu__container {
 	position: fixed;
 	width: 100%;
-	height: 32px;
+	height: 45px;
 	background: var(--background-menu);
 	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .i__menu {
 	position: absolute;
-	left: 50%;
 	transition: transform .4s;
+	height: 38px;
 }
 
 .i__close {
@@ -94,7 +100,8 @@ body.dark{
 }
 
 .nav__icon {
-	width: 30px;
+	width: 38px;
+	height: 38px;
 }
 h2{
 	color: var(--title-color);
@@ -195,6 +202,8 @@ p {
 	height: 300px;
 	width: 100%;
 	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
 	background-image: url("https://historia.nationalgeographic.com.es/medio/2020/11/02/venecia1_86e9b0bb_1280x1185.jpg");
 }
 .hover__item-2 {
@@ -202,7 +211,10 @@ p {
 	height: 300px;
 	width: 100%;
 	background-attachment: fixed;
-	background-image: url("https://perfectcolors.top/wp-content/uploads/2019/02/Significado-del-color-oro-o-dorado.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url("https://static.nationalgeographicla.com/files/styles/image_3200/public/prod-yourshot-1528686-10557562.jpg?w=1600&h=900");
 }
 .ada {
 
