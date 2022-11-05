@@ -244,7 +244,7 @@ body.dark{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	place-items: center;
-	gap: 20px;
+	gap: 16px;
 	color: var(--text-color);
 	font-family: san;
 }
