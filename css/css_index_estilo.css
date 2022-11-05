@@ -10,7 +10,6 @@ body {
 /*	background-image: url(../multimedia/images/bg-1.jpg);c*/
 	background: var(--background-page);
 }
-
 h1 {
 	color: var(--text-color);
 	text-align: center;
@@ -93,6 +92,39 @@ body.dark{
 	--title-selection: #15133c;
 	--shadow-color-1: #55f;
 	--shadow-color-2: #006;
+}
+
+.modal {
+	background: #f00a;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	transform: scale(1);
+	transition: transform .4s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+.modal-img {
+	background: #0f0;
+	position: fixed;
+	max-width: 90%;
+	transform: scale(1);
+	transition: transform .4s;
+	min-height: 100px;
+	min-width: 100px;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.off {
+	transform: scale(0);
+}
+
+.off-1 {
+	transform: scale(0);
 }
 
 /*/////////////////Button Menu////////////////*/
