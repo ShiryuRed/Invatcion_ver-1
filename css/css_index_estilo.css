@@ -216,6 +216,14 @@ p {
 	background-repeat: no-repeat;
 	background-image: url("https://static.nationalgeographicla.com/files/styles/image_3200/public/prod-yourshot-1528686-10557562.jpg?w=1600&h=900");
 }
+.hover__item-3 {
+	height: 300px;
+	width: 100%;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-image: url("../multimedia/images/galery-image/kyo-1.jpg");
+}
 .ada {
 
 	display: grid;
@@ -238,6 +246,10 @@ a {
 }
 .btn-agendar:active {
 	border: 2px solid blue;
+}
+.btn-discurso {
+	font-size: 1.25rem;
+	padding: 4px 8px
 }
 .text__container {
 	margin: 26px;
