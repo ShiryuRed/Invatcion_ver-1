@@ -26,3 +26,6 @@ sun.addEventListener("click",()=>{
   }, 400);
 })
 
+function noScroll() {
+  body.classList.toggle("no-scroll")
+}
