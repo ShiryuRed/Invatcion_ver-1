@@ -31,9 +31,11 @@ function closeMenu(){
 
 iconOpen.addEventListener("click",()=>{
   openMenu();
+  noScroll();
 })
 
 iconClose.addEventListener("click",()=>{
   closeMenu();
+  noScroll();
 })
 

@@ -52,7 +52,9 @@ modal.addEventListener("click",()=>{
 })
 
 
-
+imgSrc.addEventListener('click',(e)=>{
+    e.stopPropagation();
+})
 
 
 const imgSrcN = [

@@ -11,6 +11,7 @@ moon.addEventListener("click",()=>{
   sun.style.transform = "scale(1)";
   moon.style.transform = "scale(0)";
   body.classList.toggle("dark");
+  noScroll();
   setTimeout(function(){
     closeMenu();
   }, 400);
@@ -21,6 +22,7 @@ sun.addEventListener("click",()=>{
   sun.style.transform = "scale(0)";
   moon.style.transform = "scale(1)";
   body.classList.toggle("dark");
+  noScroll();
   setTimeout(function(){
     closeMenu();
   }, 400);
