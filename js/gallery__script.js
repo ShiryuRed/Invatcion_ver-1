@@ -9,11 +9,14 @@ const imgSrc = document.querySelector(".modal-img-front");
 
 
 function imgOn() {
-	modal.classList.toggle("off");
-	setTimeout(function(){
-    	imgModal.classList.toggle("off-1");
+    setTimeout(function(){
+        imgModal.classList.toggle("off-1");
   }, 400);
+    setTimeout(function(){
+        modal.classList.toggle("off");
+  }, 20);
 	noScroll();
+	modal.removeAttribute("hidden")
 }
 
 
@@ -40,9 +43,12 @@ for (let i = 0; i < imgGallery.length; i++) {
 modal.addEventListener("click",()=>{
     imgModal.classList.toggle("off-1");
 	setTimeout(function(){
-    	modal.classList.toggle("off");
+    modal.setAttribute("hidden", "true");
   }, 400);
   noScroll();
+    setTimeout(function(){
+        modal.classList.toggle("off");
+  }, 200);
 })
 
 
