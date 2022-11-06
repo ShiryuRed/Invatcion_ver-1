@@ -352,7 +352,7 @@ body.dark{
 
 .img-border {
 	object-fit: cover;
-	padding: 12px;
+	padding: 6px;
 	border-radius: 10px;
 	outline: 3px solid var(--text-color-dorado);
 }
