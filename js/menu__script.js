@@ -28,6 +28,7 @@ function closeMenu(){
   iconOpen.style.transform = "scale(1)";
   navMenu.classList.toggle("nav__open");
   menuOn = false;
+  noScrollSize();
 }
 
 iconOpen.addEventListener("click",()=>{
