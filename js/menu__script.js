@@ -12,6 +12,7 @@ let menuOn = false;
 for (let i = 0; i < aMenu.length; i++) {
     aMenu[i].addEventListener('click', function() {
       closeMenu();
+      noScrollSize();
     });
 }
 
@@ -28,12 +29,11 @@ function closeMenu(){
   iconOpen.style.transform = "scale(1)";
   navMenu.classList.toggle("nav__open");
   menuOn = false;
-  noScrollSize();
 }
 
 iconOpen.addEventListener("click",()=>{
   openMenu();
-  noScrollSize();
+  noScroll();
 })
 
 iconClose.addEventListener("click",()=>{
