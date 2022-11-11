@@ -102,6 +102,18 @@ body.dark{
 	--shadow-color-2: #006;
 }
 
+.map-container {
+	width: 90vw;
+	display: flex;
+	margin: 30px 10px;
+	outline: 2px solid var(--text-color-dorado);
+	overflow: hidden;
+}
+.map-info {
+	background: blue;
+	width: 90vw;
+}
+
 .modal,.modal-2 {
 	background: #0006;
 	height: 100%;
@@ -417,6 +429,7 @@ body.dark{
 	grid-template-columns: 1fr;
 	margin: 26px;
 	padding: 10px 0;
+	justify-content: center;
 }
 .title__border-h2 {
 	border-bottom: 2px solid red;
