@@ -51,6 +51,9 @@ for (let i = 0; i < imgGallery.length; i++) {
      else if (imageN == 2) {
         imgSrc.setAttribute("src", imgSrcN[2]);
      }
+     else if (imageN == 3) {
+        imgSrc.setAttribute("src", imgSrcN[3]);
+     }
     });
 };
 
@@ -86,6 +89,7 @@ const imgSrcN = [
     "https://assetsnffrgf-a.akamaihd.net/assets/m/501400102/univ/art/501400102_univ_cnt_3_xl.jpg",
     "https://assetsnffrgf-a.akamaihd.net/assets/m/501400102/univ/art/501400102_univ_cnt_2_xl.jpg",
     "https://assetsnffrgf-a.akamaihd.net/assets/m/1011232/univ/art/1011232_univ_pnr_lg.jpg",
+    "multimedia/images/galery-image/elmiguelon.jpeg",
 ];
 
 

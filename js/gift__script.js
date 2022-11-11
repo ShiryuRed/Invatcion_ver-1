@@ -99,3 +99,11 @@ body.addEventListener("keydown",(e)=>{
     modalGiftOn = false;
     }
 });
+
+
+const mapContainer = document.querySelector(".map-transition");
+const mapOn = document.querySelector(".si");
+
+mapOn.addEventListener("click",()=>{
+    mapContainer.classList.toggle("map-on")
+});

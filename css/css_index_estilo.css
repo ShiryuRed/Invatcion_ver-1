@@ -102,17 +102,6 @@ body.dark{
 	--shadow-color-2: #006;
 }
 
-.map-container {
-	width: 90vw;
-	display: flex;
-	margin: 30px 10px;
-	outline: 2px solid var(--text-color-dorado);
-	overflow: hidden;
-}
-.map-info {
-	background: blue;
-	width: 90vw;
-}
 
 .modal,.modal-2 {
 	background: #0006;
@@ -430,12 +419,38 @@ body.dark{
 	margin: 26px;
 	padding: 10px 0;
 	justify-content: center;
+	z-index: 100;
 }
 .title__border-h2 {
 	border-bottom: 2px solid red;
 	width: 70%;
 }
-
+.map-transition {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90vw;
+	transition: height .6s, outline .4s, margin .5s;
+	height: 0px;
+	margin: 0px;
+	outline: 0px solid var(--text-color-dorado);
+}
+.map-on {
+	margin: 30px 10px;
+	outline: 2px solid var(--text-color-dorado);
+	height: 300px;
+}
+.map-container {
+	width: 90vw;
+	display: flex;
+	overflow: hidden;
+	transition: transform .8s;
+	position: absolute;
+}
+.map-info {
+}
 /*/////////////////Vestimenta/Galeria////////////////*/
 
 
