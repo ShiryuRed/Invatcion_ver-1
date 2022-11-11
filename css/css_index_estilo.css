@@ -437,6 +437,11 @@ body.dark{
 	margin: 0px;
 	outline: 0px solid var(--text-color-dorado);
 }
+.si {
+	margin: 20px 0;
+	max-width: 600px;
+	min-width: 250px;
+}
 .map-on {
 	margin: 30px 10px;
 	outline: 2px solid var(--text-color-dorado);
