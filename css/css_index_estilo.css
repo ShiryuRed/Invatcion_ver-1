@@ -31,7 +31,6 @@ h4 {
 	color: var(--title-color);
 	text-align: center;
 }
-
 p {
 	color: var(--text-color-dorado);
 	text-align: center;
@@ -382,7 +381,9 @@ body.dark{
 
 
 /*////////////////Lugar////////////////*/
-.btn-discurso {
+
+
+.btn-discurso,.btn-mapa {
 	font-size: 1.25rem;
 	padding: 4px 8px;
 	margin: 0 auto;
@@ -393,6 +394,14 @@ body.dark{
 	max-width: 600px;
 	min-width: 250px;
 	transition: transform .4s;
+}
+.btn-mapa {
+	padding: 4px 8px;
+	min-width: 250px;
+	margin: 20px auto;
+	font-size: 22px;
+	max-width: 600px;
+	min-width: 250px;
 }
 .btn-discurso:active {
 	transform: scale(.96);
@@ -429,6 +438,7 @@ body.dark{
 	position: relative;
 	overflow: hidden;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 90vw;
@@ -437,11 +447,7 @@ body.dark{
 	margin: 0px;
 	outline: 0px solid var(--text-color-dorado);
 }
-.si {
-	margin: 20px 0;
-	max-width: 600px;
-	min-width: 250px;
-}
+
 .map-on {
 	margin: 30px 10px;
 	outline: 2px solid var(--text-color-dorado);
@@ -449,12 +455,15 @@ body.dark{
 }
 .map-container {
 	width: 90vw;
-	display: flex;
-	overflow: hidden;
 	transition: transform .8s;
 	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 .map-info {
+	width: 100%;
 }
 /*/////////////////Vestimenta/Galeria////////////////*/
 
@@ -662,6 +671,12 @@ body.dark{
 		flex-direction: column;
 		justify-content: center;
 		font-size: 26px;
+	}
+	.btn-mapa {
+		height: 60px;
+		width: 400px;
+		font-size: 26px;
+		cursor: pointer;
 	}
 	.timeline-badge:before {
 		height: 35px;
