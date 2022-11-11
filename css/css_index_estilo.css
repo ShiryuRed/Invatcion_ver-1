@@ -139,14 +139,13 @@ body.dark{
 	position: relative;
 }
 .tile2:before {
-	height: calc(100% - 1px);
-	width: calc(100% - 1px);
+	height: calc(100% - 0px);
+	width: calc(100% - 0px);
 }
 .tile2:before {
 	background-color: #222;
 	content: "";
 	position: absolute;
-	inset: 0.5px;
 }
 
 .modal,.modal-2 {
