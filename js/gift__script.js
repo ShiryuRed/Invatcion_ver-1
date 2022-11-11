@@ -107,3 +107,10 @@ const mapOn = document.querySelector(".si");
 mapOn.addEventListener("click",()=>{
     mapContainer.classList.toggle("map-on")
 });
+
+const mapContainer2 = document.querySelector(".map-transition2");
+const mapOn2 = document.querySelector(".si2");
+
+mapOn2.addEventListener("click",()=>{
+    mapContainer2.classList.toggle("map-on")
+});

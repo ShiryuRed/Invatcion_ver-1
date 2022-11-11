@@ -76,7 +76,8 @@ a {
 	--title-selection: #ffffff;
 	--mode-color: #15133c;
 	--shadow-color-1: #999999;
-	--shadow-color-2: #555555;
+	--shadow-color-2: #555555;--c2: #4d9;
+	--c1: #44a;
 }
 
 body.dark{
@@ -101,6 +102,52 @@ body.dark{
 	--shadow-color-2: #006;
 }
 
+
+#tiles {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+
+	display: grid;
+	grid-template-columns: repeat(var(--columns), 1fr);
+	grid-template-rows: repeat(var(--rows), 1fr);
+	z-index: 200;
+}
+
+.tile-grid__container2 {
+	animation: background-pan 10s linear infinite;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(
+		to right,
+		var(--c1),
+		var(--c2),
+		var(--c1)
+	);
+	background-size: 200%;
+}
+@keyframes background-pan {
+	from {
+		background-position: 0% center;
+	}
+
+	to {
+		background-position: -200% center;
+	}
+}
+.tile2 {
+	position: relative;
+}
+.tile2:before {
+	height: calc(100% - 1px);
+	width: calc(100% - 1px);
+}
+.tile2:before {
+	background-color: #222;
+	content: "";
+	position: absolute;
+	inset: 0.5px;
+}
 
 .modal,.modal-2 {
 	background: #0006;
@@ -358,8 +405,8 @@ body.dark{
 	font-family: san;
 }
 .simply-section {
-	background: var(--title-selection);
-	border: 2px solid var(--text-color-dorado);
+	/*background: var(--title-selection);
+	border: 2px solid var(--text-color-dorado);*/
 	height: 120px;
 	width: 120px;
 	border-radius: 5px;
@@ -434,7 +481,7 @@ body.dark{
 	border-bottom: 2px solid red;
 	width: 70%;
 }
-.map-transition {
+.map-transition,.map-transition2 {
 	position: relative;
 	overflow: hidden;
 	display: flex;
@@ -448,7 +495,7 @@ body.dark{
 	outline: 0px solid var(--text-color-dorado);
 }
 
-.map-on {
+.map-on,.map-on2 {
 	margin: 30px 10px;
 	outline: 2px solid var(--text-color-dorado);
 	height: 300px;
@@ -507,9 +554,40 @@ body.dark{
 	border: 2px solid var(--text-color);
 	padding: 12px;
 	border-radius: 90px;
+	animation-timing-function: linear;
+}
+.timeline-i:active {
+	animation-name: lol;
+	animation-duration: .3s;
+	animation-iteration-count: 1;
 }
 
-
+@keyFrames lol {
+	0% {
+		color: red;
+		transform: translateX(5px);
+	}
+	20% {
+		color: red;
+		transform: translateX(10px);
+	}
+	40% {
+		color: red;
+		transform: translateX(5px);
+	}
+	60% {
+		color: red;
+		transform: translateX(0px);
+	}
+	80% {
+		color: blue;
+		transform: translateX(-5px);
+	}
+	100% {
+		color: blue;
+		transform: translateX(0px);
+	}
+}
 .timeline-badge:before {
 	background: var(--text-color);
 	color: var(--text-color-dorado);
