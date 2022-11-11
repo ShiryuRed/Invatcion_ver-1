@@ -536,6 +536,14 @@ body.dark{
 	background-size: cover;
 	background-image: url("../multimedia/images/galery-image/kyo-1.jpg");
 }
+.background__image-4 {
+	height: 400px;
+	width: 100%;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-image: url("../multimedia/images/galery-image/elmiguelon.jpeg");
+}
 /*/////////////////Background Image////////////////*/
 
 /*/////////////////Mesa de regalos////////////////*/
