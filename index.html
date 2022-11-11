@@ -9,6 +9,7 @@
    <meta name="copyright" content="mio.XD">
    <meta name="robots" content="index">
    <link rel="icon" href="multimedia/images/gato.ico">
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
    <link rel="stylesheet" type="text/css" href="css/css_index_estilo.css">
    <link rel="stylesheet" type="text/css" href="css/normalize.css">
    <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
@@ -75,7 +76,7 @@
                <img src="" class="front-close-img">
             </div>
             <div class="text__container">
-               <p class="text">Habría preferido superar a otros en el conocimiento de lo que es excelente, que en la medida de mi poder y dominio.
+               <p class="text" data-aos="fade-right">Habría preferido superar a otros en el conocimiento de lo que es excelente, que en la medida de mi poder y dominio.
             </p>
             </div>
             <div class="countdown"></div>
@@ -91,7 +92,7 @@
       <div class="main__container">
          <div class="div__container">
             <div class="text__container">
-               <p class="text">
+               <p class="text " data-aos="fade-left">
                   Habría preferido superar a otros en el conocimiento de lo que es excelente, que en la medida de mi poder y dominio.
                </p>
             </div>
@@ -195,9 +196,9 @@
             <div class="timeline__container">
                <div class="timeline__container-i">
                   <span class="timeline-badge badge-1"></span>
-                  <i class="fa-solid fa-house timeline-i"></i>
+                  <i class="fa-solid fa-house timeline-i" data-aos="fade-right" data-aos-duration="1800"></i>
                </div>
-               <p class="text">
+               <p class="text" data-aos="fade-right">
                   <br>
                   Discurso
                   <br>
@@ -206,9 +207,9 @@
                </p>
                <div class="timeline__container-i">
                   <span class="timeline-badge badge-2"></span>
-                  <i class="fa-solid fa-list-check timeline-i"></i>
+                  <i class="fa-solid fa-list-check timeline-i"data-aos="fade-left" data-aos-duration="1800"></i>
                </div>
-               <p class="text">
+               <p class="text" data-aos="fade-left">
                   <br>
                   Recepcion
                   <br>
@@ -217,9 +218,9 @@
                </p>
                <div class="timeline__container-i">
                   <span class="timeline-badge badge-3"></span>
-                  <i class="fa-solid fa-utensils timeline-i"></i>
+                  <i class="fa-solid fa-utensils timeline-i"data-aos="fade-right" data-aos-duration="1800"></i>
                </div>
-               <p class="text">
+               <p class="text" data-aos="fade-right">
                   <br>
                   Banquete
                   <br>
@@ -228,9 +229,9 @@
                </p>
                <div class="timeline__container-i">
                   <span class="timeline-badge badge-4"></span>
-                  <i class="fa-solid fa-camera timeline-i"></i>
+                  <i class="fa-solid fa-camera timeline-i"data-aos="fade-left" data-aos-duration="1800"></i>
                </div>
-               <p class="text">
+               <p class="text" data-aos="fade-left">
                   <br>
                   Fotos
                   <br>
@@ -239,9 +240,9 @@
                </p>
                <div class="timeline__container-i">
                   <span class="timeline-badge badge-5"></span>
-                  <i class="fa-solid fa-music timeline-i"></i>
+                  <i class="fa-solid fa-music timeline-i"data-aos="fade-right" data-aos-duration="1800"></i>
                </div>
-               <p class="text">
+               <p class="text" data-aos="fade-right">
                   <br>
                   Vals
                   <br>
@@ -250,9 +251,9 @@
                </p>
                <div class="timeline__container-i">
                   <span class="timeline-badge badge-6"></span>
-                  <i class="fa-solid fa-sliders timeline-i"></i>
+                  <i class="fa-solid fa-sliders timeline-i"data-aos="fade-left" data-aos-duration="1800"></i>
                </div>
-               <p class="text">
+               <p class="text" data-aos="fade-left">
                   <br>
                   Baile
                   <br>
@@ -261,9 +262,9 @@
                </p>
                <div class="timeline__container-i">
                   <span class="timeline-badge badge-7"></span>
-                  <i class="fa-solid fa-cookie-bite timeline-i"></i>
+                  <i class="fa-solid fa-cookie-bite timeline-i"data-aos="fade-right" data-aos-duration="1800"></i>
                </div>
-               <p class="text">
+               <p class="text" data-aos="fade-right">
                   <br>
                   Mesa de dulces
                   <br>
@@ -272,9 +273,9 @@
                </p>
                <div class="timeline__container-i">
                   <span class="timeline-badge badge-8"></span>
-                  <i class="fa-solid fa-cake-candles timeline-i"></i>
+                  <i class="fa-solid fa-cake-candles timeline-i"data-aos="fade-left" data-aos-duration="1800"></i>
                </div>
-               <p class="text">
+               <p class="text" data-aos="fade-left">
                   <br>
                   Pastel
                   <br>
@@ -283,9 +284,9 @@
                </p>
                <div class="timeline__container-i">
                   <span class="timeline-badge badge-9"></span>
-                  <i class="fa-solid fa-car-burst timeline-i"></i>
+                  <i class="fa-solid fa-car-burst timeline-i"data-aos="fade-right" data-aos-duration="1800"></i>
                </div>
-               <p class="text">
+               <p class="text" data-aos="fade-right">
                   <br>
                   Fin
                   <br>
@@ -324,6 +325,12 @@
    <script src="js/countdown.js"></script>
    <script src="js/gallery__script.js"></script>
    <script src="js/gift__script.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+      AOS.init({
+         duration: 800
+      });
+   </script>
 <!----======== JS ======== -->
 </body>
 </html>

@@ -24,6 +24,9 @@ h2{
 	margin: 30px auto;
 }
 
+div {
+	overflow: hidden;
+}
 h4 {
 	color: var(--title-color);
 	text-align: center;
@@ -243,9 +246,11 @@ body.dark{
 }
 .nav__ul {
 	height: 90%;
+	width: 70vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	position: relative;
 }
 
 .nav__a {
@@ -255,6 +260,10 @@ body.dark{
 	color: var(--text-color);
 	text-decoration: none;
 	font-size: 24px;
+	position: absolute;
+	width: 100%;
+}
+.nav__li {
 }
 
 /*/////////////////Button Menu////////////////*/
@@ -623,7 +632,6 @@ body.dark{
 
 
 
-
 @media screen and (min-width: 1024px) {
 
 	p {
@@ -670,6 +678,7 @@ body.dark{
 		flex-direction: row;
 		gap: 0px;
 		border: 1px solid red;
+		position: unset;
 	}
 
 	.nav__a {
@@ -681,6 +690,7 @@ body.dark{
 		font-size: 0px;
 		padding: 10px 10px;
 		transition: transform .4s, background .4s;
+		position: unset;
 	}
 	.nav__a:hover {
 		background: red;
@@ -712,8 +722,11 @@ body.dark{
 	  color: var(--text-color);
 	  font-size: 30px;
 	  align-self: flex-start;
-	  margin-right: -5px;
-	  margin-top: 5px;
+	  margin-right: -2px;
+	  margin-top: 2px;
+	}
+	.close__image-icon {
+		cursor: pointer;
 	}
 	.countdown {
 		display: flex;
