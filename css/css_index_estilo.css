@@ -114,6 +114,19 @@ body.dark{
 	z-index: 200;
 }
 
+.tiles:after{
+	position: fixed;
+	content: "Bienvenidos";
+	top: 45%;
+	right: 20%;
+	font-size: 40px;
+	color: #fff;
+	opacity: 1;
+	transition: opacity .4s;
+}
+.title-tiles:after {
+	opacity: 0;
+}
 .tile-grid__container2 {
 	animation: background-pan 10s linear infinite;
 	height: 100%;

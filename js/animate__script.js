@@ -23,6 +23,7 @@ const handleOnClick2 = index => {
         from: index
       }) 
     });
+    wrapper2.classList.add("title-tiles")
     setTimeout(function(){
     wrapper2.style.display = ("none");
     wrapper2.innerHTML = ' ';
