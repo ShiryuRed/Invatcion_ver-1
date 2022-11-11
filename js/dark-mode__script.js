@@ -25,7 +25,7 @@ sun.addEventListener("click",()=>{
 })
 
 function noScroll() {
-    body.classList.toggle("no-scroll")
+    body.classList.toggle("no-scroll");
 }
 function noScrollSize() {
   if (screen.width < 1024) {

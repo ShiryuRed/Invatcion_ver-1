@@ -27,8 +27,8 @@ const handleOnClick2 = index => {
     wrapper2.style.display = ("none");
     wrapper2.innerHTML = ' ';
     switchW = false;
-    noScroll();
   }, 800);
+   body.classList.remove("no-scroll");
 }
 
 const createTile2 = index => {
