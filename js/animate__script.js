@@ -1,6 +1,8 @@
 
 const wrapper2 = document.getElementById("tiles");
 
+const titleTile = document.querySelector(".tiles")
+
 let columns = Math.floor(document.body.clientWidth / 50),
     rows = Math.floor(document.body.clientHeight / 390);
 
@@ -10,6 +12,10 @@ let switchW = true;
 
 if (switchW == true) {
   noScroll();
+}
+
+function tilesOn() {
+
 }
 
 const handleOnClick2 = index => {
@@ -23,9 +29,10 @@ const handleOnClick2 = index => {
         from: index
       }) 
     });
-    wrapper2.classList.add("title-tiles")
+    titleTile.classList.add("title-tiles");
     setTimeout(function(){
     wrapper2.style.display = ("none");
+    titleTile.style.display = ("none");
     wrapper2.innerHTML = ' ';
     switchW = false;
   }, 800);
@@ -38,6 +45,8 @@ const createTile2 = index => {
   tile2.classList.add("tile2");
 
   tile2.onclick = e => handleOnClick2(index);
+
+  titleTile.onclick = e => handleOnClick2(index);
 
 
   return tile2;
