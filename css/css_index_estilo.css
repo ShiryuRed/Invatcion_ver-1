@@ -102,7 +102,6 @@ body.dark{
 	--shadow-color-2: #006;
 }
 
-
 #tiles {
 	position: fixed;
 	height: 100%;
@@ -165,7 +164,7 @@ body.dark{
 	position: absolute;
 }
 
-.modal,.modal-2 {
+.modal,.modal-2,.modal-3 {
 	background: #0006;
 	height: 100%;
 	width: 100%;
@@ -208,7 +207,7 @@ body.dark{
 }
 
 
-.modal-gift {
+.modal-gift,.modal-confirm {
 	position: fixed;
 	min-height: 75%;
 	min-width: 95%;
@@ -219,7 +218,7 @@ body.dark{
 	align-items: center;
 	max-width: 900px;
 }
-.data-info {
+.data-info,.data-info-2 {
 	background: var(--background-page);
 	min-width: 90%;
 	width: 100%;
@@ -728,6 +727,7 @@ body.dark{
 	gap: 25px;
 	padding: 20px;
 	margin: 60px 0;
+	overflow: hidden;
 }
 .form-invitation {
 	position: relative;

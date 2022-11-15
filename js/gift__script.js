@@ -11,6 +11,12 @@ const dataInfo = document.querySelector(".data-info");
 const giftInfo = document.querySelector(".gift-info");
 
 
+
+const modal3 = document.querySelector(".modal-3");
+const confirmModal = document.querySelector(".modal-confirm");
+const confirmInfo = document.querySelector(".confirm-info");
+
+
 const btnConfirmA = document.querySelector(".btn-confirm");
 
 let visaInfo = true;
@@ -96,7 +102,6 @@ modal2.addEventListener("click",()=>{
     modalGiftOn = false;
 });
 
-
 body.addEventListener("keydown",(e)=>{
     let key = e.keyCode
     if (key == 27 && modalGiftOn == true) {
@@ -122,33 +127,58 @@ mapOn2.addEventListener("click",()=>{
 });
 
 
-function showConfirmModal() {
-    if (paypalInfo == true) {
-        let newHtmlCode = `
-              <h3 class="title-gift-modal">Confirmar Asistencia</h3>
-            <h3>Nombre</h3>
-            <form class="form-invitation">
-               <input type="text" id="number-input" class="invitation-number" required>
-               <label class="lbl-text">
-                  <span class="text-input">Numero de invitacion</span>
-               </label>
-            </form>
-            <div class="container__qr-generator ">
-               <div id="qr-container" class="qr-container "></div>
-            </div>
-            
-            <button class="btn-send">Confirmar</button>`;
-        dataInfo.innerHTML += newHtmlCode;
-    }
-}
+
+function attendOn() {
+    modal3.removeAttribute("hidden");
+    setTimeout(function(){
+        modal3.classList.toggle("off");
+  }, 20);
+    setTimeout(function(){
+        confirmModal.classList.toggle("off-2");
+  }, 200);
+    noScroll();
+};
+
+function attendOff() {
+    confirmModal.classList.toggle("off-2");
+    setTimeout(function(){
+    modal3.setAttribute("hidden", "true");
+  }, 400);
+  noScroll();
+    setTimeout(function(){
+        modal3.classList.toggle("off");
+  }, 200);
+};
+
+
+confirmInfo.addEventListener("click",(e)=> {
+    e.stopPropagation();
+})
+
 
 btnConfirmA.addEventListener("click",()=> { 
-    giftOn();
-    showConfirmModal();
+    attendOn();
     modalGiftOn = true;
 });
+modal3.addEventListener("click",()=>{
+    attendOff();
+    modalGiftOn = false;
+});
+
 
 
 const sendButton = document.querySelector(".btn-send");
 
 const invitationNumber = document.getElementById("number-input");
+
+const qrContainer = document.getElementById("qr-container");
+
+const qrContainerStyle = document.querySelector(".container__qr-generator");
+
+const QR = new QRCode(qrContainer);
+
+sendButton.addEventListener("click", (e) => {
+    qrContainerStyle.classList.add("anim-qr");
+    e.preventDefault;
+    QR.makeCode(invitationNumber.value)
+})
