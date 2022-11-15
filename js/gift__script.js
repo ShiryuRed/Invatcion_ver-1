@@ -10,11 +10,17 @@ const dataInfo = document.querySelector(".data-info");
 
 const giftInfo = document.querySelector(".gift-info");
 
+
+const btnConfirmA = document.querySelector(".btn-confirm");
+
 let visaInfo = true;
 let paypalInfo = true;
 
 let modalGiftOn = false;
 
+function test1() {
+    alert("Las mentiras caen")
+}
 
 function giftOn() {
 	modal2.removeAttribute("hidden");
@@ -114,3 +120,35 @@ const mapOn2 = document.querySelector(".si2");
 mapOn2.addEventListener("click",()=>{
     mapContainer2.classList.toggle("map-on")
 });
+
+
+function showConfirmModal() {
+    if (paypalInfo == true) {
+        let newHtmlCode = `
+              <h3 class="title-gift-modal">Confirmar Asistencia</h3>
+            <h3>Nombre</h3>
+            <form class="form-invitation">
+               <input type="text" id="number-input" class="invitation-number" required>
+               <label class="lbl-text">
+                  <span class="text-input">Numero de invitacion</span>
+               </label>
+            </form>
+            <div class="container__qr-generator ">
+               <div id="qr-container" class="qr-container "></div>
+            </div>
+            
+            <button class="btn-send">Confirmar</button>`;
+        dataInfo.innerHTML += newHtmlCode;
+    }
+}
+
+btnConfirmA.addEventListener("click",()=> { 
+    giftOn();
+    showConfirmModal();
+    modalGiftOn = true;
+});
+
+
+const sendButton = document.querySelector(".btn-send");
+
+const invitationNumber = document.getElementById("number-input");

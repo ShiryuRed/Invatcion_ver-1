@@ -84,9 +84,10 @@ if (screen.width < 1450) {
     createTiles2(columns * rows);
     createGrid2();
 } else {
-
     wrapper2.style.display = ("none");
     wrapper2.innerHTML = ' ';
+    titleTile.style.display = ("none");
+    titleTile.innerHTML = ' ';
     switchW = false;
     noScroll();
 }

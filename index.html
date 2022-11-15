@@ -19,7 +19,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet"> 
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <script src="https://kit.fontawesome.com/28faa9840b.js" crossorigin="anonymous"></script>
-    <title>Pagina 2.0 JS</title>
+    <title>Invitacion</title>
 </head>
 <body class="body " >
    <span class="tiles-title-container"><h1 class="tiles ">Ver Invitacion</h1></span>
@@ -30,10 +30,10 @@
          <img src="multimedia/images/icons/close.svg" class="close__image-icon">
       </span>
    </span>
-   <span class="modal-2 off" hidden="true">
+   <span class="modal-2 off"  hidden="true">
       <span class="modal-gift off-2">
          <span class="data-info gift-info ">
-            
+           
          </span>
       </span>
    </span>
@@ -62,7 +62,7 @@
                         <li class="nav__li "><a href="#Galeria" class="nav__a"><i class="fas fa-photo-film"></i> Galeria</a></li>
                         <li class="nav__li "><a href="#Programa"  class="nav__a"><i class="fas fa-calendar-days"></i> Programa</a></li>
                         <li class="nav__li "><a href="#Mesa-de-regalos" class="nav__a"><i class="fas fa-gift"></i> Mesa de Regalos</a></li>
-                        <li class="nav__li "><a href="#" class="nav__a"><i class="fas fa-code"></i> Asistencia</a></li>
+                        <li class="nav__li "><a href="#Asistencia" class="nav__a"><i class="fas fa-code"></i> Asistencia</a></li>
                         <span></span>
                   </ul>
                </div>
@@ -328,17 +328,36 @@
          <div class="div__container">
             <h1 class="">Mesa de regalos</h1>
             <div class="text__container">
-               <p class="text">
+               <p class="text" data-aos="fade-left">
                   Inserte aqui un texto todo fachero si si pero no se me ocurre nada asi que toco que quede vacio, bueno ya no esta muy vacio pero si.
                </p>
             </div>
             <div class="gift__container">
                <i class="fa-brands fa-cc-visa gift-i"></i>
-               <button class="btn-gift c-visa">Regalar</button>
+               <button class="btn-gift c-visa" data-aos="fade-right" data-aos-duration="1600">Regalar</button>
             </div>
             <div class="gift__container">
                <i class="fa-brands fa-cc-paypal gift-i"></i>
-               <button class="btn-gift c-paypal">Regalar</button>
+               <button class="btn-gift c-paypal" data-aos="fade-left" data-aos-duration="1600">Regalar</button>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="Asistencia">
+      <div class="main__container">
+         <div class="background__container-image">
+            <div class="background__image-2">
+            </div>
+         </div>
+         <div class="div__container">
+            <h1 class="">Asistencia</h1>
+            <div class="text__container">
+               <p class="text" data-aos="fade-left">
+                  Nos encantaria tenerte presente en esta ocacion especial
+               </p>
+            </div>
+            <div class="confirm__container">
+               <button class="btn-confirm " data-aos="fade-left" data-aos-duration="1600">Confirmar Asistencia</button>
             </div>
          </div>
       </div>
@@ -353,6 +372,7 @@
    <script src="js/simplyCountdown.min.js"></script>
    <script src="js/countdown.js"></script>
    <script src="js/gallery__script.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
    <script src="js/gift__script.js"></script>
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
    <script src="js/anime.min.js"></script>
