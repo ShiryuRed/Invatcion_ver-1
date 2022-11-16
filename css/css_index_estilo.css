@@ -817,8 +817,8 @@ body.dark{
 	transition: height .4s;
 }
 .anim-qr {
-	height: 250px;
-	width: 250px;
+	height: 300px;
+	width: 300px;
 }
 .qr-container {
 	display: flex;

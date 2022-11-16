@@ -177,8 +177,72 @@ const qrContainerStyle = document.querySelector(".container__qr-generator");
 
 const QR = new QRCode(qrContainer);
 
+const nombreAsitente = document.querySelector(".nombre-asistencia");
+
+
+
+const invitados = [{
+    nombre: "Orlando",
+    personas: "2",
+    mesa: "3"
+},{
+    nombre: "Natalia",
+    personas: "4",
+    mesa: "9"
+},{
+    nombre: "Balbina",
+    personas: "3",
+    mesa: "10"
+},{
+    nombre: "Delia",
+    personas: "2",
+    mesa: "4"
+},{
+    nombre: "Ioan",
+    personas: "5",
+    mesa: "1"
+},{
+    nombre: "Daniel",
+    personas: "5",
+    mesa: "3"
+},{
+    nombre: "Esteban",
+    personas: "2",
+    mesa: "4"
+},{
+    nombre: "Gerardo",
+    personas: "1",
+    mesa: "7"
+}];
+
+let numer = 0;
+
+/*
+let arras = String(qrText)*/
+
+/*for (invitado in invitados) {
+    let datos = invitados[invitado];
+    var nombre = datos["nombre"];
+    var personas = datos["personas"];
+    var mesa = datos["mesa"];
+    console.log(`Invitado: ${nombre}, Pase: ${personas}, Mesa: ${mesa}`)
+}
+*/
+
 sendButton.addEventListener("click", (e) => {
+    numer = invitationNumber.value;
+
+let nombre = invitados[numer]["nombre"];
+let personas = invitados[numer]["personas"];
+let mesa = invitados[numer]["mesa"];
+
     qrContainerStyle.classList.add("anim-qr");
+    let qrText =`Invitado: ${nombre},Pase: ${personas},Mesa: ${mesa}`;
     e.preventDefault;
-    QR.makeCode(invitationNumber.value)
+    let confirmar = confirm("¿Confirmar numero de invitacion?");
+    if (confirmar) {
+        confirmInfo.removeChild(sendButton);
+        QR.makeCode(qrText);
+    }
+    
 })
