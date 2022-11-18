@@ -47,11 +47,12 @@
                <label class="lbl-text">
                   <span class="text-input">Numero de invitacion</span>
                </label>
+               <input type="submit" name="">
             </form>
             <div class="container__qr-generator ">
                <div id="qr-container" class="qr-container "></div>
             </div>
-            
+            <span class="text-qr "><p></p></span>
             <button class="btn-send">Confirmar</button>
          </span>
       </span>
@@ -127,9 +128,9 @@
    </section>
    <section id="Lugar">
       <div class="main__container">
-         <div class="div__container">
+         <div class="div__container lugar-grid">
             <h2 class="title__horario-lugar">Horario & lugar</h2>
-            <div class="text__container-3">
+            <div class="text__container-3 inicio-grid">
                <h2 class="title__border-h2">Discurso </h2>
                <p class="text">
                   Salon 
@@ -157,8 +158,9 @@
                   </button>
             </div>
                   
-            <h2 class="title__border-h2">Banquete</h2>
-            <div class="text__container-3">
+           
+            <div class="text__container-3 banquete-grid">
+            <h2 class="title__border-h2 title__banquete">Banquete </h2>
                <p class="text">
                   Inserte Ubicacion
                   <br>
@@ -184,8 +186,7 @@
                      Mapa
                   </button>
             </div>
-            <div class="background__container-image">
-               
+            <div class="background__container-image image-grid">
                <div class="background__image-3">
                </div>
             </div>
@@ -214,8 +215,8 @@
    </section>
    <section id="Galeria">
       <div class="main__container hover">
-         <div class="div__container">
-            <h2>Galeria</h2>
+            <h2 class="gallery-title">Galeria</h2>
+         <div class="div__container gallery__container">
             <div class="img__container" data-aos="fade-up">
                <img class="img-border img-gallery" src="https://assetsnffrgf-a.akamaihd.net/assets/m/501400102/univ/art/501400102_univ_cnt_3_xl.jpg">
             </div>
@@ -225,7 +226,7 @@
             <div class="img__container img-gallery" data-aos="fade-up" data-aos-delay="300">
                <img class="img-border" src="https://assetsnffrgf-a.akamaihd.net/assets/m/1011232/univ/art/1011232_univ_pnr_lg.jpg">
             </div>
-            <div class="img__container img-gallery" data-aos="fade-up" data-aos-delay="300">
+            <div class="img__container img-gallery" data-aos="fade-up" data-aos-delay="350">
                <img class="img-border" src="multimedia/images/galery-image/elmiguelon.jpeg">
             </div>
          </div>
@@ -385,7 +386,7 @@
             </div>
       </div>
    </section>
-   <footer>
+   <footer class="footer">
       <h4>Ya acabo :p</h4>
       <p>buenas</p>
       <a href="#">Contacto</a>

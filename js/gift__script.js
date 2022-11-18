@@ -175,6 +175,8 @@ const qrContainer = document.getElementById("qr-container");
 
 const qrContainerStyle = document.querySelector(".container__qr-generator");
 
+const qrTextStyle = document.querySelector(".text-qr");
+
 const QR = new QRCode(qrContainer);
 
 const nombreAsitente = document.querySelector(".nombre-asistencia");
@@ -215,7 +217,9 @@ const invitados = [{
     mesa: "7"
 }];
 
-let numer = 0;
+
+let numer = undefined;
+
 
 /*
 let arras = String(qrText)*/
@@ -228,21 +232,35 @@ let arras = String(qrText)*/
     console.log(`Invitado: ${nombre}, Pase: ${personas}, Mesa: ${mesa}`)
 }
 */
+invitationNumber.addEventListener("input", (e) => {
+    numer = invitationNumber.value;
+    return numer;
+})
 
 sendButton.addEventListener("click", (e) => {
-    numer = invitationNumber.value;
+    if (numer == undefined || invitados.length <= numer) {
+        qrTextStyle.classList.add("text-qr-anim");
+        setTimeout(function(){
+            qrTextStyle.classList.remove("text-qr-anim");
+      }, 1800);
+        invitationNumber.classList.add("input-error-anim");
+        setTimeout(function(){
+            invitationNumber.classList.remove("input-error-anim");
+      }, 1800);
+    } else {
+        let nombre = invitados[numer]["nombre"];
+        let personas = invitados[numer]["personas"];
+        let mesa = invitados[numer]["mesa"];
 
-let nombre = invitados[numer]["nombre"];
-let personas = invitados[numer]["personas"];
-let mesa = invitados[numer]["mesa"];
-
-    qrContainerStyle.classList.add("anim-qr");
-    let qrText =`Invitado: ${nombre},Pase: ${personas},Mesa: ${mesa}`;
-    e.preventDefault;
-    let confirmar = confirm("¿Confirmar numero de invitacion?");
-    if (confirmar) {
-        confirmInfo.removeChild(sendButton);
-        QR.makeCode(qrText);
+        let qrText =`Invitado: ${nombre},Pases: ${personas},Mesa: ${mesa}`;
+        let confirmar = confirm(`¿Confirmar ${numer} como numero de invitacion?`);
+        if (confirmar) {
+            confirmInfo.removeChild(sendButton);
+            qrContainerStyle.classList.add("anim-qr");
+            QR.makeCode(qrText);
+        }
     }
-    
+})
+invitationNumber.addEventListener("submit", (e) => {
+        e.preventDefault;
 })

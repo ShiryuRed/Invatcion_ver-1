@@ -61,6 +61,7 @@ a {
 	--background-nav-hover: #010415;
 	--background-menu: #b7b8aecc;
 	--background-open-menu: #eefc;
+	--background-qr: #0000;
 	--text-color: #7d0a1e;
 	--text-color-dorado: #d4a413;
 	--text-color-hover: #E4E9F7;
@@ -70,9 +71,10 @@ a {
 	--border-img: 5px solid #FFA500;
 	--border-bottom-text: 4px solid #FFA500;
 	--border-example-text: 3px solid #001D6E;
+	--border-qr: 3px solid #0000;
+	--border-bottom-1: 1px solid #0000;
 	--gray-color: #777777;
 	--white-color: #ffffff;
-	--border-bottom-1: 1px solid #0000;
 	--title-selection: #ffffff;
 	--mode-color: #15133c;
 	--shadow-color-1: #999999;
@@ -83,18 +85,20 @@ a {
 body.dark{
 	--background-color: #330033;
 	--background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
-  --background-page: #010415;
+  	--background-page: #010415;
 	--background-text: #002040;
 	--background-example: #FEE2C5;
 	--background-nav-hover: #E4E9F7;
 	--background-menu: #FFA500cf;
 	--background-open-menu: #422c;
+	--background-qr: #ffff;
 	--text-color: #fffdc0;
 	--text-color-2: #48f;
 	--text-color-hover: #541690;
 	--title-color: #ffffff;
 	--border-img: 5px solid #998300;
 	--border-text: 4px solid #B9B9B9;
+	--border-qr: 3px solid #ffff;
 	--border-bottom-1: 1px solid #ffff;
 	--mode-color: #ffffff;
 	--title-selection: #15133c;
@@ -744,6 +748,12 @@ body.dark{
 	color: var(--text-color);
 	border: none;
 	outline: 0px;
+	transition: background .3s, transform .3s;
+	transform: translateX(0px);
+}
+.input-error-anim {
+	background: #f00;
+	color: #600;
 }
 .lbl-text {
 	position: absolute;
@@ -798,6 +808,25 @@ body.dark{
 .btn-send:active {
 	transform: scale(.96);
 }
+.text-qr {
+	position: relative;
+	height: 1px;
+	width: 100%;
+	margin-top: -30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform .4s;
+	transform: scale(0);
+}.text-qr-anim {
+	transform: scale(1);
+}
+.text-qr:before {
+	content: "Numero de invitacion invalido";
+	color: #f00;
+	top: 0;
+	font-size: 18px;
+}
 .btn-confirm {
 	border: 3px solid var(--text-color-dorado);
 	background: transparent;
@@ -826,6 +855,24 @@ body.dark{
 	padding: 10px;
 	height: 100%;
 	width: 100%;
+	border: var(--border-qr);
+	background: var(--background-qr);
+}
+
+.footer {
+	background: #309;
+	border:3px solid red;
+	font-family: sen;
+	display: grid;
+	place-items: center;
+}
+.footer > h4 {
+	color: var(--text-color-dorado);
+	font-size: 20px;
+}
+.footer > a {
+	color: #990;
+	font-size: 20px;
 }
 /*/////////////////Asistencia////////////////*/
 
@@ -931,14 +978,15 @@ body.dark{
 		display: flex;
 		height: unset;
 		padding: 0;
+		z-index: 1000;
 	}
 
 	.nav__menu-container {
 		display: flex;
-	  justify-content: space-between;
-	  align-items: center;
+	  	justify-content: space-between;
+	  	align-items: center;
 		margin-top: 0px;
-	  width: 100%;
+	  	width: 100%;
 		height: unset;
 		background: var(--background-open-menu);
 	}
@@ -989,13 +1037,13 @@ body.dark{
 	.i__sun {
 		position: absolute;
 		right: 0;
-	  transition: .4s transform;
-	  margin: 0px;
-	  color: var(--text-color);
-	  font-size: 30px;
-	  align-self: flex-start;
-	  margin-right: -2px;
-	  margin-top: 2px;
+	  	transition: .4s transform;
+	  	margin: 0px;
+	  	color: var(--text-color);
+	  	font-size: 30px;
+	  	align-self: flex-start;
+	  	margin-right: 5px;
+	  	margin-top: 2px;
 	}
 	.close__image-icon {
 		cursor: pointer;
@@ -1003,6 +1051,9 @@ body.dark{
 	.countdown {
 		display: flex;
 		justify-content: space-evenly;
+	}
+	.text-container {
+		display: inline-block;
 	}
 	.btn-agendar{
 		height: 40px;
@@ -1012,6 +1063,30 @@ body.dark{
 		flex-direction: column;
 		justify-content: center;
 	}
+	.lugar-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.title__horario-lugar {
+		grid-column: 1 / 3;
+		grid-row: 1/2;
+	}
+	.image-grid {
+		grid-column: 1 / 3;
+	}
+	.inicio-grid {
+		grid-column: 1 / 2;
+		grid-row: 2 / 3;
+		max-width: 50vw;
+	}
+	.banquete-grid {
+		grid-column: 2 / 3;
+		grid-row: 2 / 3;
+		max-width: 50vw;
+	}
+	.map-transition,.map-transition2,.map-container {
+		width: 100%;
+	}
 	.btn-discurso {
 		height: 60px;
 		width: 400px;
@@ -1019,6 +1094,27 @@ body.dark{
 		flex-direction: column;
 		justify-content: center;
 		font-size: 26px;
+	}
+	.gallery__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-auto-flow: dense;
+		grid-auto-rows: 450px;
+		min-height: 1000px;
+		width: 100%;
+		grid-gap: 12px;
+		outline: 2px solid red;
+		place-items: center;
+		padding: 30px;
+		gap: 20px;
+	}
+	.img-gallery {
+		height: 100%;
+		width: 100%;
+	}
+	.img-container {
+		min-width: 500px;
+		min-height: 500px;
 	}
 	.timeline-badge:before {
 		height: 35px;
