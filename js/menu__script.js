@@ -51,3 +51,36 @@ body.addEventListener("keydown",(e)=>{
     menuOn = false;
     }
 });
+
+
+
+
+
+
+const audio = document.querySelector(".audio");
+const audioPlay = document.querySelector(".music-on");
+const audioStop = document.querySelector(".music-off");
+
+const audioControlOff = () => {
+  audioPlay.classList.toggle("mute");
+  audio.pause();
+  audioStop.classList.toggle("play");
+}
+const audioControlOn = () => {
+  audioStop.classList.toggle("play");
+  audio.play();
+  audioPlay.classList.toggle("mute");
+}
+
+audioPlay.addEventListener("click", (e)=>{
+  audioControlOff();
+})
+audioStop.addEventListener("click", (e)=>{
+  audioControlOn();
+})
+
+audio.volume = 0.6;
+
+const musicStart = () => {
+  audio.play();
+}

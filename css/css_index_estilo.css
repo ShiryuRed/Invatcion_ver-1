@@ -24,12 +24,14 @@ h1 {
 	color: var(--text-color);
 	text-align: center;
 	font-size: 24px;
+	font-family: 'Marck Script', cursive;
 }
 
-h2{ 
-	color: var(--title-color);
+h2 { 
+	color: var(--text-color);
 	text-align: center;
 	margin: 30px auto;
+	font-family: 'Marck Script', cursive;
 }
 
 div {
@@ -74,6 +76,8 @@ a {
 	--background-qr: #0000;
 	--text-color: #7d0a1e;
 	--text-color-dorado: #d4a413;
+	--text-color-dorado-var-1: #d4a413;
+	--text-color-dorado-var-2: #7d0a1e;
 	--text-color-hover: #E4E9F7;
 	--text-example-color: #DFF6FF;
 	--title-color: #505050;
@@ -88,7 +92,8 @@ a {
 	--title-selection: #ffffff;
 	--mode-color: #15133c;
 	--shadow-color-1: #999999;
-	--shadow-color-2: #555555;--c2: #4d9;
+	--shadow-color-2: #555555;
+	--c2: #4d9;
 	--c1: #44a;
 }
 
@@ -108,6 +113,8 @@ body.dark{
 	--text-color-2: #48f;
 	--text-color-hover: #541690;
 	--title-color: #ffffff;
+	--text-color-dorado-var-1: #7d0a1e;
+	--text-color-dorado-var-2: #d4a413;
 	--border-img: 5px solid #998300;
 	--border-text: 4px solid #B9B9B9;
 	--border-qr: 3px solid #ffff;
@@ -116,6 +123,38 @@ body.dark{
 	--title-selection: #15133c;
 	--shadow-color-1: #55f;
 	--shadow-color-2: #006;
+}
+.music-control {
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	font-size: 40px;
+	background: #1338;
+	color: var(--text-color-dorado);
+	border-radius: 28px;
+	padding: 15px;
+	z-index: 50;
+}
+.music-container {
+	position: relative;
+	display: grid;
+}
+.music-on,.music-off {
+	grid-row: -1 / 1;
+	grid-column: 1 / 2;
+	transition: transform .6s;
+}
+.music-off{
+}
+.mute {
+	transform: scale(0);
+}
+.play {
+	transform: scale(0);
+}
+.music-on{
+	
 }
 
 #tiles {
@@ -175,7 +214,7 @@ body.dark{
 	width: calc(100% - 0px);
 }
 .tile2:before {
-	background-color: #222;
+	background-color: #000;
 	content: "";
 	position: absolute;
 }
@@ -389,7 +428,10 @@ body.dark{
 .front-img {
 	object-fit: cover;
 }
-
+.title-date {
+	font-size: 18px;
+	color: var(--text-color);
+}
 .temporizador {
 	font-family: si;
 }
@@ -409,21 +451,8 @@ body.dark{
 	width: 200px;
 	text-align: center;
 	color: var(--text-color-dorado);
-	animation-name: borde;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
 	font-size: 18px;
-}
-@keyFrames borde {
-	0% {
-		border-image-source: linear-gradient(to left, #0053C8, #B2FF59,#FF0000);
-	}
-	50% {
-		border-image-source: linear-gradient(to right,#B2FF59 ,#FF0000 ,#0053C8);
-	}
-	100% {
-		border-image-source: linear-gradient(to left, #0053C8, #B2FF59,#FF0000);
-	}
+	border-radius: 10px;
 }
 /*/////////////////Presentacion////////////////*/
 
@@ -468,7 +497,7 @@ body.dark{
 	margin: 0 auto;
 	text-align: center;
 	background: var(--text-color);
-	color: var(--text-color-dorado);
+	color: var(--text-color-dorado-var-1);
 	border: 2px solid var(--text-color-dorado);
 	max-width: 600px;
 	min-width: 250px;
@@ -556,6 +585,10 @@ body.dark{
 	transform: scale(.94);
 }
 
+.title-formal {
+	color: var(--text-color-dorado);
+	margin-top: -10px;
+}
 .img-border {
 	object-fit: cover;
 	padding: 6px;
@@ -570,7 +603,7 @@ body.dark{
 /*/////////////////Timeline////////////////*/
 
 .timeline__container {
-	border-left: 4px dashed #ff6622;
+	border-left: 4px dashed var(--text-color-dorado);
 	margin: 10px;
 	font-family:'sen', sans-serif;
 }
@@ -625,7 +658,7 @@ body.dark{
 }
 .timeline-badge:before {
 	background: var(--text-color);
-	color: var(--text-color-dorado);
+	color: var(--text-color-dorado-var-1);
 	content: " ";
 	position: absolute;
 	left: 0;
@@ -635,19 +668,19 @@ body.dark{
 	outline: 3px solid var(--text-color-dorado);
 }
 .badge-1:before {
-	content: "1:00 pm";
+	content: "1:15 pm";
 }
 .badge-2:before {
-	content: "2:00 pm";
+	content: "2:45 pm";
 }
 .badge-3:before {
-	content: "3:00 pm";
+	content: "3:15 pm";
 }
 .badge-4:before {
-	content: "4:00 pm";
+	content: "4:30 pm";
 }
 .badge-5:before {
-	content: "5:00 pm";
+	content: "5:40 pm";
 }
 .badge-6:before {
 	content: "6:00 pm";
@@ -659,7 +692,7 @@ body.dark{
 	content: "8:00 pm";
 }
 .badge-9:before {
-	content: "9:00 pm";
+	content: "11:00 pm";
 }
 
 /*/////////////////Timeline////////////////*/
@@ -668,11 +701,12 @@ body.dark{
 /*/////////////////Background Image////////////////*/
 .background__image {
 	height: 400px;
-	width: 100%;
+	width: 100vw;
 	background-attachment: fixed;
 	background-position: center;
-	background-size: cover;
-	background-image: url("https://historia.nationalgeographic.com.es/medio/2020/11/02/venecia1_86e9b0bb_1280x1185.jpg");
+	background-size: cover; 
+	background-repeat: no-repeat;
+	background-image: url("https://fondosmil.com/fondo/48686.jpg");
 }
 .background__image-2 {
 	height: 400px;
@@ -722,10 +756,11 @@ body.dark{
 .btn-gift {
 	border: 3px solid var(--text-color-dorado);
 	background: transparent;
+	border-radius: 10px;
 	padding: 2px 10px;
 	width: 200px;
 	font-family: sen;
-	color: var(--text-color);
+	color: var(--text-color-dorado-var-2);
 	transition: transform .3s;
 }
 .btn-gift:active {
@@ -860,20 +895,18 @@ body.dark{
 .anim-qr {
 	height: 300px;
 	width: 300px;
+	border: var(--border-qr);
 }
 .qr-container {
 	display: flex;
 	justify-content: center;
-	padding: 10px;
 	height: 100%;
 	width: 100%;
-	border: var(--border-qr);
-	background: var(--background-qr);
+	background: var(--background-page);
 }
 
 .footer {
-	background: #309;
-	border:3px solid red;
+	background: #111;
 	font-family: sen;
 	display: grid;
 	place-items: center;
@@ -981,6 +1014,9 @@ body.dark{
 	#Presentacion {
 		margin-top: 60px;
 	}
+	.title-date {
+		font-size: 26px;
+	}
 	.menu__container {
 		display: none;
 	}
@@ -1009,7 +1045,6 @@ body.dark{
 		align-items: center;
 		flex-direction: row;
 		gap: 0px;
-		border: 1px solid red;
 		position: unset;
 	}
 
@@ -1025,7 +1060,8 @@ body.dark{
 		position: unset;
 	}
 	.nav__a:hover {
-		background: red;
+		background: var(--text-color-dorado);
+		color: #7d0a1e;
 	}
 	.nav__a:active {
 		transform: scale(.96);
@@ -1131,9 +1167,6 @@ body.dark{
 	.timeline-badge:before {
 		height: 35px;
 		width: 90px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 		font-size: 22px;
 	}
 	.img-border {
@@ -1141,6 +1174,38 @@ body.dark{
 	}
 	.btn-gift {
 		cursor: pointer;
+	}
+	.btn-confirm {
+		cursor: pointer;
+	}
+	.data-info,.data-info-2 {
+		min-width: 40%;
+		width: 60%;
+	}
+	/*timeline desktop*/
+	.timeline__container {
+		border: 2px solid red;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.timeline__container-i {
+		border: 3px solid blue;
+		padding: 20px;
+		width: 50%;
+	}
+	.timeline__container-i > i {
+		font-size: 40px;
+		padding: 25px;
+		width: 100px;
+	}
+	.timeline-badge:before {
+		border: 3px solid darkblue;
+		position: relative;
+		margin: 10px;
+	}
+	.timeline-i {
+		background: green;
 	}
 }
 

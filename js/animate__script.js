@@ -37,6 +37,7 @@ const handleOnClick2 = index => {
     switchW = false;
   }, 800);
    body.classList.remove("no-scroll");
+   musicStart();
 }
 
 const createTile2 = index => {

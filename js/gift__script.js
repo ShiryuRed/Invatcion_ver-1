@@ -24,10 +24,6 @@ let paypalInfo = true;
 
 let modalGiftOn = false;
 
-function test1() {
-    alert("Las mentiras caen")
-}
-
 function giftOn() {
 	modal2.removeAttribute("hidden");
     setTimeout(function(){
@@ -218,27 +214,34 @@ const invitados = [{
 }];
 
 
-let numer = undefined;
+let number = undefined;
 
+let nAN = undefined;
 
-/*
-let arras = String(qrText)*/
+let invalidId = undefined;
 
-/*for (invitado in invitados) {
-    let datos = invitados[invitado];
-    var nombre = datos["nombre"];
-    var personas = datos["personas"];
-    var mesa = datos["mesa"];
-    console.log(`Invitado: ${nombre}, Pase: ${personas}, Mesa: ${mesa}`)
-}
-*/
+let numberId = undefined;
+
+let qrId = undefined;
+
 invitationNumber.addEventListener("input", (e) => {
-    numer = invitationNumber.value;
-    return numer;
+    number = invitationNumber.value;
+    nAN = isNaN(number);
+    if (nAN == true || invitados.length <= number || number == '') {
+        invalidId = true;
+    }
+    numberId = parseInt(number);
+    qrId = numberId / 4 -1237;
+    Math.trunc(qrId);
+    invalidId = false; 
+    if (Number.isInteger(qrId) == false) {
+        invalidId = true;
+    }
+    return numberId;
 })
 
 sendButton.addEventListener("click", (e) => {
-    if (numer == undefined || invitados.length <= numer) {
+    if (number == undefined || invalidId == true || invitados.length <= qrId) {
         qrTextStyle.classList.add("text-qr-anim");
         setTimeout(function(){
             qrTextStyle.classList.remove("text-qr-anim");
@@ -248,12 +251,12 @@ sendButton.addEventListener("click", (e) => {
             invitationNumber.classList.remove("input-error-anim");
       }, 1800);
     } else {
-        let nombre = invitados[numer]["nombre"];
-        let personas = invitados[numer]["personas"];
-        let mesa = invitados[numer]["mesa"];
+        let nombre = invitados[qrId]["nombre"];
+        let personas = invitados[qrId]["personas"];
+        let mesa = invitados[qrId]["mesa"];
 
         let qrText =`Invitado: ${nombre},Pases: ${personas},Mesa: ${mesa}`;
-        let confirmar = confirm(`¿Confirmar ${numer} como numero de invitacion?`);
+        let confirmar = confirm(`¿Confirmar ${number} como numbero de invitacion?`);
         if (confirmar) {
             confirmInfo.removeChild(sendButton);
             qrContainerStyle.classList.add("anim-qr");
@@ -263,4 +266,8 @@ sendButton.addEventListener("click", (e) => {
 })
 invitationNumber.addEventListener("submit", (e) => {
         e.preventDefault;
-})
+})/*
+for (let i = 0; i <= 150; i++) {
+    let loc = (1237 + i) * 4 ;
+    document.write(loc + `<br>`)
+}*/
