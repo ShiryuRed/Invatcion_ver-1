@@ -167,6 +167,8 @@ const sendButton = document.querySelector(".btn-send");
 
 const invitationNumber = document.getElementById("number-input");
 
+const confirmarFamilia = document.querySelector(".confirmar-familia");
+
 const qrContainer = document.getElementById("qr-container");
 
 const qrContainerStyle = document.querySelector(".container__qr-generator");
@@ -180,35 +182,35 @@ const nombreAsitente = document.querySelector(".nombre-asistencia");
 
 
 const invitados = [{
-    nombre: "Orlando",
+    nombre: "Alcaraz",
     personas: "2",
     mesa: "3"
 },{
-    nombre: "Natalia",
+    nombre: "Álamo",
     personas: "4",
     mesa: "9"
 },{
-    nombre: "Balbina",
+    nombre: "Alarcón",
     personas: "3",
     mesa: "10"
 },{
-    nombre: "Delia",
+    nombre: "Paz",
     personas: "2",
     mesa: "4"
 },{
-    nombre: "Ioan",
+    nombre: "Bernat",
     personas: "5",
     mesa: "1"
 },{
-    nombre: "Daniel",
+    nombre: "Marin",
     personas: "5",
     mesa: "3"
 },{
-    nombre: "Esteban",
+    nombre: "Alberdi",
     personas: "2",
     mesa: "4"
 },{
-    nombre: "Gerardo",
+    nombre: "Castell-Isern",
     personas: "1",
     mesa: "7"
 }];
@@ -261,6 +263,9 @@ sendButton.addEventListener("click", (e) => {
             confirmInfo.removeChild(sendButton);
             qrContainerStyle.classList.add("anim-qr");
             QR.makeCode(qrText);
+            let newHtmlCodeFam = `
+                <h3>Familia: ${nombre}</h3>`;
+            confirmarFamilia.innerHTML += newHtmlCodeFam;
         }
     }
 })

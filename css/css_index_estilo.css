@@ -874,6 +874,11 @@ body.dark{
 	top: 0;
 	font-size: 18px;
 }
+.confirmar-familia {
+	color: var(--text-color-dorado);
+	margin-top: -20px;
+	border-bottom: 3px solid #7d0a1e;
+}
 .btn-confirm {
 	border: 3px solid var(--text-color-dorado);
 	background: transparent;
@@ -997,7 +1002,9 @@ body.dark{
 
 
 @media screen and (min-width: 1024px) {
-
+	*{
+		max-width: 100%;
+	}
 	p {
 		font-size: 28px;
 		letter-spacing: 1px;
@@ -1206,6 +1213,35 @@ body.dark{
 	}
 	.timeline-i {
 		background: green;
+	}
+
+
+	/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+	.body::-webkit-scrollbar {
+	    -webkit-appearance: none;
+	}
+
+	.body::-webkit-scrollbar:vertical {
+	    width:10px;
+	}
+
+	.body::-webkit-scrollbar-button:increment,.body::-webkit-scrollbar-button {
+	    display: none;
+	} 
+
+	.body::-webkit-scrollbar:horizontal {
+	    height: 10px;
+	}
+
+	.body::-webkit-scrollbar-thumb {
+	    background-color: #797979;
+	    border-radius: 20px;
+	    border: 2px solid #f1f2f3;
+	}
+
+	.body::-webkit-scrollbar-track {
+	    border-radius: 10px;  
 	}
 }
 
